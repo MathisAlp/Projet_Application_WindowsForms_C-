@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="06ea77761b364026815d80d096de95cd" Name="Diagram1" ZoomLevel="58" DisplayType="true" >
+        <EntityTypeShape EntityType="Model1.DetailsCmd" Width="1.5" PointX="20.875" PointY="10.375" />
+        <EntityTypeShape EntityType="Model1.Livraison" Width="1.5" PointX="11" PointY="14" />
+        <EntityTypeShape EntityType="Model1.Livreur" Width="1.5" PointX="6.875" PointY="10.25" />
+        <EntityTypeShape EntityType="Model1.Commande" Width="1.5" PointX="16.625" PointY="11.125" />
+        <EntityTypeShape EntityType="Model1.Produit" Width="1.5" PointX="22.875" PointY="6.125" />
+        <EntityTypeShape EntityType="Model1.Secretaire" Width="1.5" PointX="3.75" PointY="2.875" />
+        <EntityTypeShape EntityType="Model1.Comptable" Width="1.5" PointX="6.25" PointY="2.875" />
+        <EntityTypeShape EntityType="Model1.RespoStock" Width="1.5" PointX="8.625" PointY="2.875" />
+        <EntityTypeShape EntityType="Model1.Paiement" Width="1.5" PointX="17.125" PointY="6.625" />
+        <EntityTypeShape EntityType="Model1.Client" Width="1.5" PointX="11.625" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model1.User" Width="1.5" PointX="6.875" PointY="6.125" />
+        <InheritanceConnector EntityType="Model1.Client" />
+        <InheritanceConnector EntityType="Model1.Secretaire" />
+        <InheritanceConnector EntityType="Model1.Livreur" />
+        <InheritanceConnector EntityType="Model1.Comptable" />
+        <InheritanceConnector EntityType="Model1.RespoStock" />
+        <AssociationConnector Association="Model1.LivreurLivraison" />
+        <AssociationConnector Association="Model1.ClientPaiement" />
+        <AssociationConnector Association="Model1.ClientCommande" />
+        <AssociationConnector Association="Model1.CommandePaiement" />
+        <AssociationConnector Association="Model1.CommandeLivraison" />
+        <AssociationConnector Association="Model1.CommandeDetailsCmd" />
+        <AssociationConnector Association="Model1.ProduitDetailsCmd" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

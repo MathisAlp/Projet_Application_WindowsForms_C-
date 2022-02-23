@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Model1StoreContainer" CdmEntityContainer="Model1Container">
+    <EntitySetMapping Name="DetailsCmd">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.DetailsCmd)">
+        <MappingFragment StoreEntitySet="DetailsCmd">
+          <ScalarProperty Name="IdDetailsCmd" ColumnName="IdDetailsCmd" />
+          <ScalarProperty Name="qteCmd" ColumnName="qteCmd" />
+          <ScalarProperty Name="total" ColumnName="total" />
+          <ScalarProperty Name="CommandeId" ColumnName="CommandeId" />
+          <ScalarProperty Name="ProduitId" ColumnName="ProduitId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Livraison">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Livraison)">
+        <MappingFragment StoreEntitySet="Livraison">
+          <ScalarProperty Name="IdLivraison" ColumnName="IdLivraison" />
+          <ScalarProperty Name="dateLiv" ColumnName="dateLiv" />
+          <ScalarProperty Name="LivreurId" ColumnName="LivreurId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Commande">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Commande)">
+        <MappingFragment StoreEntitySet="Commande">
+          <ScalarProperty Name="IdCmd" ColumnName="IdCmd" />
+          <ScalarProperty Name="dateCmd" ColumnName="dateCmd" />
+          <ScalarProperty Name="totalCmd" ColumnName="totalCmd" />
+          <ScalarProperty Name="isPaid" ColumnName="isPaid" />
+          <ScalarProperty Name="adresseLiv" ColumnName="adresseLiv" />
+          <ScalarProperty Name="statut" ColumnName="statut" />
+          <ScalarProperty Name="ClientId" ColumnName="ClientId" />
+          <ScalarProperty Name="LivraisonId" ColumnName="LivraisonId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Produit">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Produit)">
+        <MappingFragment StoreEntitySet="Produit">
+          <ScalarProperty Name="IdProduit" ColumnName="IdProduit" />
+          <ScalarProperty Name="libelle" ColumnName="libelle" />
+          <ScalarProperty Name="qteStock" ColumnName="qteStock" />
+          <ScalarProperty Name="prixUnitaire" ColumnName="prixUnitaire" />
+          <ScalarProperty Name="img" ColumnName="img" />
+          <ScalarProperty Name="description" ColumnName="description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Paiement">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Paiement)">
+        <MappingFragment StoreEntitySet="Paiement">
+          <ScalarProperty Name="IdPaiement" ColumnName="IdPaiement" />
+          <ScalarProperty Name="datePaid" ColumnName="datePaid" />
+          <ScalarProperty Name="montant" ColumnName="montant" />
+          <ScalarProperty Name="ClientId" ColumnName="ClientId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="User">
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.User)">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+          <ScalarProperty Name="nom" ColumnName="nom" />
+          <ScalarProperty Name="prenom" ColumnName="prenom" />
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="role" ColumnName="role" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Livreur)">
+        <MappingFragment StoreEntitySet="User_Livreur">
+          <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Client)">
+        <MappingFragment StoreEntitySet="User_Client">
+          <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+          <ScalarProperty Name="telephone" ColumnName="telephone" />
+          <ScalarProperty Name="adresse" ColumnName="adresse" />
+          <ScalarProperty Name="refCpte" ColumnName="refCpte" />
+          <ScalarProperty Name="soldeCpte" ColumnName="soldeCpte" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Secretaire)">
+        <MappingFragment StoreEntitySet="User_Secretaire">
+          <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.Comptable)">
+        <MappingFragment StoreEntitySet="User_Comptable">
+          <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+      <EntityTypeMapping TypeName="IsTypeOf(Model1.RespoStock)">
+        <MappingFragment StoreEntitySet="User_RespoStock">
+          <ScalarProperty Name="IdUser" ColumnName="IdUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="CommandePaiement" TypeName="Model1.CommandePaiement" StoreEntitySet="Paiement">
+      <EndProperty Name="Commande">
+        <ScalarProperty Name="IdCmd" ColumnName="Commande_IdCmd" />
+      </EndProperty>
+      <EndProperty Name="Paiement">
+        <ScalarProperty Name="IdPaiement" ColumnName="IdPaiement" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>
